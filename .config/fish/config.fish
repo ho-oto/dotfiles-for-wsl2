@@ -17,7 +17,6 @@ abbr --add gau git add --update
 abbr --add gaa git add --all
 abbr --add gc git commit
 abbr --add gca git commit --amend
-abbr --add gco git checkout
 abbr --add gst git status
 abbr --add gdf git diff
 
