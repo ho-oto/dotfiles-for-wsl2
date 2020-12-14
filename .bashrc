@@ -128,6 +128,3 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   fi
   tmux $option && exit
 fi
-
-
-source /home/hooto/.config/broot/launcher/bash/br
