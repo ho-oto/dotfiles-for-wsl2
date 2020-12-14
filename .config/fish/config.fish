@@ -6,6 +6,9 @@ set LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
 alias ls="exa --icons --group-directories-first --git"
 alias ncdu="ncdu --color dark -rr"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 abbr --add em emacs
 
