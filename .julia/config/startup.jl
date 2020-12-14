@@ -4,5 +4,9 @@ if any(pkg.name == "OhMyREPL" for (id, pkg) in Pkg.dependencies())
 else
     @warn("OhMyREPL not installed")
 end
-# ENV["PLOTS_DEFAULT_BACKEND"] = "unicodeplots"
-ENV["JULIA_CUDA_USE_BINARYBUILDER"] = false
+
+ENV["JULIA_CUDA_USE_BINARYBUILDER"] = "false"
+
+atreplinit() do repl
+    ENV["PLOTS_DEFAULT_BACKEND"] = "unicodeplots"
+end
