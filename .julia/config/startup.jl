@@ -5,3 +5,4 @@ else
     @warn("OhMyREPL not installed")
 end
 # ENV["PLOTS_DEFAULT_BACKEND"] = "unicodeplots"
+ENV["JULIA_CUDA_USE_BINARYBUILDER"] = false
