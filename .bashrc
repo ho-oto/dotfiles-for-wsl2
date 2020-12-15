@@ -118,8 +118,6 @@ fi
 
 source $HOME/.cargo/env
 
-[[ $- != *i* ]] && return
-
 if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   if tmux has-session -t xps; then
     tmux attach -t xps && exit
