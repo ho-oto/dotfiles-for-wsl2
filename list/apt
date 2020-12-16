@@ -22,3 +22,7 @@ unzip
 libssl-dev
 zlib1g-dev
 libffi-dev
+# for build python
+libreadline-dev
+libsqlite3-dev
+libbz2-dev

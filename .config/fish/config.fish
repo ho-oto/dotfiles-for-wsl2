@@ -1,6 +1,10 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
+set PATH $HOME/julia/bin $PATH
+set PYENV_ROOT $HOME/.pyenv
+set PATH $PYENV_ROOT/bin $PATH
+
 set PATH /usr/local/cuda/bin $PATH
 set LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
@@ -24,3 +28,4 @@ abbr --add gs git status
 abbr --add gd git diff
 
 starship init fish | source
+pyenv init - | source
