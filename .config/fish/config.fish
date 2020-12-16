@@ -11,12 +11,14 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 abbr --add em emacs
+abbr --add lg lazygit
 
 abbr --add ga git add
 abbr --add gau git add --update
 abbr --add gaa git add --all
 abbr --add gc git commit
 abbr --add gca git commit --amend
+abbr --add gcm git commit -m
 abbr --add gst git status
 abbr --add gdf git diff
 
