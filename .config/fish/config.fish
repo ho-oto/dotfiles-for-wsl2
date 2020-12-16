@@ -17,8 +17,9 @@ abbr --add ga git add
 abbr --add gau git add --update
 abbr --add gaa git add --all
 abbr --add gc git commit
-abbr --add gca git commit --amend
+abbr --add gca git commit -a
 abbr --add gcm git commit -m
+abbr --add gcam git commit -a -m
 abbr --add gs git status
 abbr --add gd git diff
 
