@@ -19,7 +19,7 @@ abbr --add gaa git add --all
 abbr --add gc git commit
 abbr --add gca git commit --amend
 abbr --add gcm git commit -m
-abbr --add gst git status
-abbr --add gdf git diff
+abbr --add gs git status
+abbr --add gd git diff
 
 starship init fish | source
