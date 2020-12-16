@@ -1,4 +1,6 @@
 #!/usr/bin/bash
 
-yes | sudo apt update
-yes | sudo apt upgrade
+sudo apt -y update
+sudo apt -y upgrade
+
+sed 's/#.*//' ../list/apt | xargs sudo apt -y install
