@@ -1,0 +1,24 @@
+# ==ssh==
+openssh-server
+net-tools
+
+# ==tools==
+build-essential
+fish
+fzf
+ncdu
+htop
+lazygit
+emacs-nox
+unzip
+
+# ==deps for build julia==
+# pkg-config
+# m4
+# cmake
+# gfortran
+
+# ==libs==
+libssl-dev
+zlib1g-dev
+libffi-dev
