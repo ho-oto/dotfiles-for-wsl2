@@ -19,7 +19,7 @@ abbr --add gaa git add --all
 abbr --add gc git commit
 abbr --add gca git commit -a
 abbr --add gcm git commit -m
-abbr --add gcam git commit -a -m
+abbr --add gcam git commit -am
 abbr --add gs git status
 abbr --add gd git diff
 
