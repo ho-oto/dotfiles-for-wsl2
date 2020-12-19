@@ -1,15 +1,18 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-set -x DOTFILES_HOME (cat $HOME/.envdotfiles)
-set PATH $DOTFILES_HOME/bin $PATH
+set -x DOTFILES_HOME (cat "$HOME/.envdotfiles")
+set -x PATH "$DOTFILES_HOME/bin" $PATH
 
-set PATH $HOME/julia/bin $PATH
-set PYENV_ROOT $HOME/.pyenv
-set PATH $PYENV_ROOT/bin $PATH
+set -x PATH "$HOME/julia/bin" $PATH
 
-set PATH /usr/local/cuda/bin $PATH
-set LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
+set -x PYENV_ROOT "$HOME/.pyenv"
+set -x PATH "$PYENV_ROOT/bin" $PATH
+
+set -x PATH "$HOME/.cargo/bin" $PATH
+
+set -x PATH /usr/local/cuda/bin $PATH
+set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
 alias ls="exa --icons --group-directories-first --git"
 alias ncdu="ncdu --color dark -rr"
