@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+apt-mark showmanual >${DOTFILES_HOME}/list/apt_autogen
