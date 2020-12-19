@@ -1,1 +1,36 @@
 #!/usr/bin/bash
+
+mkdir -p $XDG_CONFIG_HOME/fish
+mkdir -p $XDG_CONFIG_HOME/git
+mkdir -p $HOME/.julia/config
+mkdir -p $HOME/.jupyter
+mkdir -p $HOME/.config
+
+itemshome=(
+    .bashrc
+    .emacs.el
+    .profile
+    .tmux.conf
+    .julia/config/startup.jl
+    .jupyter/jupyter_notebook_config.py
+    .config/starship.toml
+)
+
+for FILE in ${itemshome[@]}; do
+    rm -f $HOME/$FILE
+    ln -s $DOTFILES_HOME/$FILE $HOME/$FILE
+done
+
+itemsconfig=(
+    fish/config.fish
+    fish/fish_plugins
+    git/config
+    git/ignore
+)
+
+DOTFILES_CONFIG=$DOTFILES_HOME/.config
+
+for FILE in ${itemsconfig[@]}; do
+    rm -f $XDG_CONFIG_HOME/$FILE
+    ln -s $DOTFILES_CONFIG/$FILE $XDG_CONFIG_HOME/$FILE
+done
