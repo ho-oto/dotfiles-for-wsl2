@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-apt -y update
-apt -y upgrade
-sed 's/#.*//' ../list/apt | sed '/^$/d' | xargs apt -y install
+sudo apt -y update
+sudo apt -y upgrade
+sed 's/#.*//' $DOTFILES_HOME/list/apt | sed '/^$/d' | xargs sudo apt -y install
