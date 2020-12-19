@@ -11,10 +11,10 @@ export XDG_DATA_HOME="$HOME/.share"
 
 cd "$DOTFILES_HOME/scripts"
 
-./apt
-./cuda
-./dot
-./cargo
-./fisher
-./tmux
-./pyenv
+source ./apt
+source ./cuda
+source ./dot
+source ./cargo
+source ./fisher
+source ./tmux
+source ./pyenv
