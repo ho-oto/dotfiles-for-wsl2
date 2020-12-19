@@ -13,8 +13,8 @@ cd "$DOTFILES_HOME/scripts"
 
 source ./apt
 source ./cuda
-source ./dot
 source ./cargo
+source ./pyenv
+source ./dot
 source ./fisher
 source ./tmux
-source ./pyenv
