@@ -1,17 +1,17 @@
 #!/usr/bin/bash
 set -euxo pipefail
 
-export DOTFILES_HOME=$HOME/.dotfiles
-echo $DOTFILES_HOME >$HOME/.envdotfiles
-git clone https://github.com/ho-oto/dotfiles-for-wsl2 $DOTFILES_HOME
+export DOTFILES_HOME="$HOME"/.dotfiles
+echo "$DOTFILES_HOME" >"$HOME"/.envdotfiles
+git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_HOME"
 
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.share
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_CACHE_HOME="$HOME"/.cache
+export XDG_DATA_HOME="$HOME"/.share
 
-$DOTFILES_HOME/scripts/dot
-$DOTFILES_HOME/scripts/apt
-$DOTFILES_HOME/scripts/cargo
-$DOTFILES_HOME/scripts/fisher
-$DOTFILES_HOME/scripts/tmux
-$DOTFILES_HOME/scripts/pyenv
+"$DOTFILES_HOME"/scripts/apt
+"$DOTFILES_HOME"/scripts/dot
+"$DOTFILES_HOME"/scripts/cargo
+"$DOTFILES_HOME"/scripts/fisher
+"$DOTFILES_HOME"/scripts/tmux
+"$DOTFILES_HOME"/scripts/pyenv
