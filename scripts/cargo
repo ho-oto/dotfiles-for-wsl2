@@ -1,5 +1,4 @@
 #!/usr/bin/bash
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y --no-modify-path
-
-sed 's/#.*//' ../list/cargo | xargs $HOME/.cargo/bin/cargo install
+sed 's/#.*//' ../list/cargo | sed '/^$/d' | xargs $HOME/.cargo/bin/cargo install

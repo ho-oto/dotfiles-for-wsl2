@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-sudo apt -y update
-sudo apt -y upgrade
-
-sed 's/#.*//' ../list/apt | xargs sudo apt -y install
+apt -y update
+apt -y upgrade
+sed 's/#.*//' ../list/apt | sed '/^$/d' | xargs apt -y install
