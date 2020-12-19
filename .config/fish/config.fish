@@ -1,6 +1,9 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
+set -x DOTFILES_HOME (cat $HOME/.envdotfiles)
+set PATH $DOTFILES_HOME/bin $PATH
+
 set PATH $HOME/julia/bin $PATH
 set PYENV_ROOT $HOME/.pyenv
 set PATH $PYENV_ROOT/bin $PATH
