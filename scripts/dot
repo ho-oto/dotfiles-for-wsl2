@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 mkdir -p "$XDG_CONFIG_HOME/fish"
 mkdir -p "$XDG_CONFIG_HOME/git"

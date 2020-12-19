@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 sed 's/#.*//' "$DOTFILES_HOME/list/repository" | sed '/^$/d' | xargs sudo add-apt-repository
 sudo apt -y update
