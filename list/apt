@@ -5,10 +5,10 @@ net-tools
 # ==tools==
 build-essential
 fish
-fzf
+#fzf
 ncdu
 htop
-lazygit
+#lazygit
 emacs-nox
 unzip
 
