@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-sh "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -y --no-modify-path
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sed 's/#.*//' "$DOTFILES_HOME/list/cargo" | sed '/^$/d' | xargs "$HOME/.cargo/bin/cargo" install
