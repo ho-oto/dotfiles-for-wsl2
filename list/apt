@@ -5,12 +5,12 @@ net-tools
 # ==tools==
 build-essential
 fish
-#fzf
 ncdu
 htop
 lazygit
 emacs-nox
 unzip
+shellcheck
 
 # ==deps for build julia==
 pkg-config

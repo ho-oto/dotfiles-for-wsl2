@@ -23,7 +23,6 @@ findutils
 fish
 fontconfig-config
 fonts-dejavu-core
-fzf
 gfortran
 grep
 gzip
@@ -129,6 +128,7 @@ python3-serial
 python3-setuptools
 python3-zipp
 python3.8
+shellcheck
 show-motd
 ssh-import-id
 sysvinit-utils

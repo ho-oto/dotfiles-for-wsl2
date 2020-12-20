@@ -4,6 +4,8 @@ case $- in
       *) return;;
 esac
 
+shopt -s checkwinsize
+
 # history
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -54,8 +56,6 @@ if ! shopt -oq posix; then
 fi
 
 # misc
-source $HOME/.cargo/env
-shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # tmux
@@ -67,3 +67,5 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   fi
   tmux $option && exit
 fi
+
+source $HOME/.cargo/env
