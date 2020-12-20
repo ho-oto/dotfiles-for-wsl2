@@ -23,7 +23,7 @@ done
 
 itemsconfig=(
     fish/config.fish
-    fish/fish_plugins
+#    fish/fish_plugins
     git/config
     git/ignore
 )
