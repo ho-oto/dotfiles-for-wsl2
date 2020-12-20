@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sed 's/#.*//' "$DOTFILES_HOME/list/repository" | sed '/^$/d' | xargs sudo add-apt-repository
+for REPOSITORY in $(sed 's/#.*//' "$DOTFILES_HOME/list/repository" | sed '/^$/d'); do
+    sudo add-apt-repository -y "$REPOSITORY"
+done
 sudo apt -y update
 sudo apt -y upgrade
 sed 's/#.*//' "$DOTFILES_HOME/list/apt" | sed '/^$/d' | xargs sudo apt -y install
