@@ -18,3 +18,4 @@ cd "$DOTFILES_HOME/scripts"
 ./dot
 ./fisher
 ./tmux
+./misc
