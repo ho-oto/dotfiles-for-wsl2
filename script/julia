@@ -1,8 +1,9 @@
 #!/bin/bash
 
 tmp=$(mktemp -d)
-cd "$tmp"
+cd "$tmp" || echo "Failed to move to tempdir"
 curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.3-linux-x86_64.tar.gz
 tar xf julia-1.5.3-linux-x86_64.tar.gz
 sudo mv julia-1.5.3 /usr/local/julia
 sudo ln -s /usr/local/julia/bin/julia /usr/local/bin/julia
+rm -f julia-1.5.3-linux-x86_64.tar.gz
