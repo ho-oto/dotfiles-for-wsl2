@@ -1,7 +1,20 @@
 #!/bin/bash
 set -euxo pipefail
 
-export DOTFILES_HOME="$HOME/.dotfiles"
+if [[ -z "$DOTFILES_HOME" ]]; then
+    export DOTFILES_HOME="$HOME/.dotfiles"
+fi
+
+if [[ -z "$JULIA_MAJOR" ]]; then
+    export JULIA_MAJOR=1
+fi
+if [[ -z "$JULIA_MINOR" ]]; then
+    export JULIA_MINOR=5
+fi
+if [[ -z "$JULIA_PATCH" ]]; then
+    export JULIA_PATCH=3
+fi
+
 echo "$DOTFILES_HOME" >"$HOME/.envdotfiles"
 git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_HOME"
 
