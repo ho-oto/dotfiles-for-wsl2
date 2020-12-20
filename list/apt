@@ -13,10 +13,10 @@ emacs-nox
 unzip
 
 # ==deps for build julia==
-# pkg-config
-# m4
-# cmake
-# gfortran
+pkg-config
+m4
+cmake
+gfortran
 
 # ==libs==
 libssl-dev
