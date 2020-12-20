@@ -1,0 +1,1 @@
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/scripts/setup)"`
