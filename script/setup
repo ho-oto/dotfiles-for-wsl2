@@ -27,3 +27,7 @@ cd "$DOTFILES_HOME/script"
 
 cd "$DOTFILES_HOME"
 git checkout .
+
+cat <<EOF
+run tmux and press ^q + I to fetch plugins
+EOF
