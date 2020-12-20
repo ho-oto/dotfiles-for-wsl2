@@ -18,4 +18,5 @@ cd "$DOTFILES_HOME/scripts"
 ./dot
 ./fisher
 ./tmux
+./julia
 ./misc

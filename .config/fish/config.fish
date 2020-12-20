@@ -4,8 +4,6 @@ set -x FZF_LEGACY_KEYBINDINGS 0
 set -x DOTFILES_HOME (cat "$HOME/.envdotfiles")
 set -x PATH "$DOTFILES_HOME/bin" $PATH
 
-set -x PATH "$HOME/julia/bin" $PATH
-
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
 
