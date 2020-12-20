@@ -16,6 +16,7 @@ cd "$DOTFILES_HOME/scripts"
 ./pyenv
 ./cuda
 ./dot
+./fzf
 ./fisher
 ./tmux
 ./julia
