@@ -4,6 +4,14 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+if [ -z "$DOTFILES_HOME" ]; then
+    if [ -f "$HOME/.envdotfiles" ]; then
+        DOTFILES_HOME=$(cat "$HOME/.envdotfiles")
+    else
+        echo "DOTFILES_HOME is unset or empty" >&2 && exit 1
+    fi
+fi
+
 DOTFILES_CONFIG="$DOTFILES_HOME/.config"
 
 dirshome=(
