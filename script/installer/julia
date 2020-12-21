@@ -1,11 +1,26 @@
 #!/bin/bash
 
-XY=${JULIA_VERSION%.*}
-XYZ=$JULIA_VERSION
+JULIA_JSON=$(curl -fs https://julialang-s3.julialang.org/bin/versions.json)
+JULIA_VERSION=$(
+    echo "$JULIA_JSON" |
+    jq -r 'keys | .[]' |
+    grep -v - |
+    sort |
+    tail -n 1
+)
+JULIA_URL=$(
+    echo "$JULIA_JSON" |
+    jq -r --arg jv "$JULIA_VERSION" '.[$jv].files[] | select(.triplet == "x86_64-linux-gnu") | .url'
+)
 
-cd "$(mktemp -d)" || echo "Failed to move to tempdir"
-curl -LO "https://julialang-s3.julialang.org/bin/linux/x64/$XY/julia-$XYZ-linux-x86_64.tar.gz"
-tar xf "julia-$XYZ-linux-x86_64.tar.gz"
-sudo mv "julia-$XYZ" /usr/local/julia
-sudo ln -s /usr/local/julia/bin/julia /usr/local/bin/julia
-rm -f "julia-$XYZ-linux-x86_64.tar.gz"
+cd "$(mktemp -d)" || { echo "Failed to move to tempdir"; exit 1; }
+curl -L "$JULIA_URL" -o julia.tar.gz
+
+mkdir -p julia
+tar zxf julia.tar.gz -C julia --strip-components 1
+
+sudo mkdir -p /opt/julias
+sudo mv julia "/opt/julias/julia-$JULIA_VERSION"
+sudo ln -s "/opt/julias/julia-$JULIA_VERSION/bin/julia" /usr/local/bin/julia
+
+rm -f julia.tar.gz

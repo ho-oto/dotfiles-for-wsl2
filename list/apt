@@ -11,6 +11,7 @@ lazygit
 emacs-nox
 unzip
 shellcheck
+jq
 
 # ==deps for build julia==
 pkg-config

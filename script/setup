@@ -3,8 +3,6 @@ set -euxo pipefail
 
 export DOTFILES_HOME="$HOME/.dotfiles"
 
-export JULIA_VERSION=1.5.3
-
 echo "$DOTFILES_HOME" >"$HOME/.envdotfiles"
 git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_HOME"
 
