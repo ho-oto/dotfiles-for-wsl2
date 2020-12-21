@@ -16,19 +16,19 @@ export XDG_DATA_HOME="$HOME/.share"
 
 cd "$DOTFILES_HOME/script"
 
-./apt
-./cuda
-./julia
+installer/apt
+installer/cuda
+installer/julia
 
-./cargo
-./pyenv
-./fzf
+installer/cargo
+installer/pyenv
+installer/fzf
 
 ./dot
 
-./fisher
-./tmux
-./misc
+installer/fisher
+installer/tmux
+installer/misc
 
 cd "$DOTFILES_HOME"
 git checkout .
