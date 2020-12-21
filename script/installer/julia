@@ -1,7 +1,7 @@
 #!/bin/bash
 
-XY="$JULIA_MAJOR.$JULIA_MINOR"
-XYZ="$XY.$JULIA_PATCH"
+XY=${JULIA_VERSION%.*}
+XYZ=$JULIA_VERSION
 
 cd "$(mktemp -d)" || echo "Failed to move to tempdir"
 curl -LO "https://julialang-s3.julialang.org/bin/linux/x64/$XY/julia-$XYZ-linux-x86_64.tar.gz"
