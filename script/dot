@@ -1,7 +1,12 @@
 #!/bin/bash
 
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
+
 mkdir -p "$XDG_CONFIG_HOME/fish"
 mkdir -p "$XDG_CONFIG_HOME/git"
+mkdir -p "$XDG_CONFIG_HOME/broot"
 mkdir -p "$HOME/.julia/config"
 mkdir -p "$HOME/.jupyter"
 mkdir -p "$HOME/.config"
@@ -26,6 +31,7 @@ itemsconfig=(
     # fish/fish_plugins
     git/config
     git/ignore
+    broot/conf.toml
 )
 
 DOTFILES_CONFIG="$DOTFILES_HOME/.config"
