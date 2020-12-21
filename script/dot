@@ -4,29 +4,29 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-mkdir -p "$XDG_CONFIG_HOME/fish"
-mkdir -p "$XDG_CONFIG_HOME/git"
-mkdir -p "$XDG_CONFIG_HOME/broot"
-mkdir -p "$HOME/.julia/config"
-mkdir -p "$HOME/.jupyter"
-mkdir -p "$HOME/.config"
+DOTFILES_CONFIG="$DOTFILES_HOME/.config"
 
-itemshome=(
+dirshome=(
+    .julia/config
+    .jupyter
+    .config
+)
+fileshome=(
     .bashrc
     .emacs.el
     .profile
     .tmux.conf
     .julia/config/startup.jl
     .jupyter/jupyter_notebook_config.py
-    .config/starship.toml
+    .config/starship.toml # location of starship.toml is hard-coded as $HOME/.config, not $XDG_CONFIG_HOME
 )
 
-for FILE in "${itemshome[@]}"; do
-    rm -f "$HOME/$FILE"
-    ln -s "$DOTFILES_HOME/$FILE" "$HOME/$FILE"
-done
-
-itemsconfig=(
+dirsxdgc=(
+    fish
+    git
+    broot
+)
+filesxdgc=(
     fish/config.fish
     # fish/fish_plugins
     git/config
@@ -34,9 +34,20 @@ itemsconfig=(
     broot/conf.toml
 )
 
-DOTFILES_CONFIG="$DOTFILES_HOME/.config"
+mkdir -p "$XDG_CONFIG_HOME"
 
-for FILE in "${itemsconfig[@]}"; do
+for DIR in "${dirshome[@]}"; do
+    mkdir -p "$HOME/$DIR"
+done
+for FILE in "${fileshome[@]}"; do
+    rm -f "$HOME/$FILE"
+    ln -s "$DOTFILES_HOME/$FILE" "$HOME/$FILE"
+done
+
+for DIR in "${dirsxdgc[@]}"; do
+    mkdir -p "$XDG_CONFIG_HOME/$DIR"
+done
+for FILE in "${filesxdgc[@]}"; do
     rm -f "$XDG_CONFIG_HOME/$FILE"
     ln -s "$DOTFILES_CONFIG/$FILE" "$XDG_CONFIG_HOME/$FILE"
 done
