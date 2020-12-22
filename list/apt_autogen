@@ -29,6 +29,7 @@ gzip
 hostname
 htop
 init
+jq
 lazygit
 libasyncns0
 libatomic1
