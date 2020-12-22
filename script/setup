@@ -32,10 +32,9 @@ git checkout .
 cat <<EOF
 You have to do the following:
 1. run tmux and press ^q + I to fetch plugins
-2. install python via pyenv and install jupyter lab
-3. edit /etc/ssh/sshd_config to disable password
-4. copy files in DOTFILES_HOME/windows to /mnt/c/Users/{windows user name}
-5. set start_wsl_sshd.bat to Task Scheduler of windows
+2. edit /etc/ssh/sshd_config to disable password
+3. copy files in DOTFILES_HOME/windows to /mnt/c/Users/{windows user name}
+4. set start_wsl_sshd.bat to Task Scheduler of windows
     
-TODO: write bash/PowerShell script to do 3, 5
+TODO: write bash/PowerShell script to do 2-4
 EOF
