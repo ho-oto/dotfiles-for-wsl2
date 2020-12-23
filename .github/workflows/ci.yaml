@@ -12,5 +12,5 @@ jobs:
     runs-on: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04]
     steps:
     - name: setup
-    - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/script/setup)"
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/script/setup)"
     
