@@ -33,6 +33,7 @@ dirsxdgc=(
     fish
     git
     broot
+    nano
 )
 filesxdgc=(
     fish/config.fish
@@ -40,6 +41,7 @@ filesxdgc=(
     git/config
     git/ignore
     broot/conf.toml
+    nano/nanorc
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
