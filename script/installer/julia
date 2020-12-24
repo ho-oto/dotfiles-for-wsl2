@@ -5,7 +5,7 @@ JULIA_VERSION=$(
     echo "$JULIA_JSON" |
     jq -r 'keys | .[]' |
     grep -v - |
-    sort |
+    sort --version-sort |
     tail -n 1
 )
 JULIA_URL=$(
