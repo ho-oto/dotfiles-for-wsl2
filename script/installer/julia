@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 
 JULIA_JSON=$(curl -fs https://julialang-s3.julialang.org/bin/versions.json)
 JULIA_VERSION=$(
