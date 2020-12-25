@@ -1,10 +1,11 @@
 #!/bin/bash
+set -euxo pipefail
 
-if [ -z "$XDG_CONFIG_HOME" ]; then
+if [ -z "${XDG_CONFIG_HOME:-}" ]; then
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-if [ -z "$DOTFILES_HOME" ]; then
+if [ -z "${DOTFILES_HOME:-}" ]; then
     if [ -f "$HOME/.envdotfiles" ]; then
         DOTFILES_HOME=$(cat "$HOME/.envdotfiles")
     else

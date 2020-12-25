@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 
 # https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=WSLUbuntu&target_version=20&target_type=debnetwork
 
