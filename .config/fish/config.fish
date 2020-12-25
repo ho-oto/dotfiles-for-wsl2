@@ -14,6 +14,8 @@ set -x PATH "$HOME/.fzf/bin" $PATH
 set -x PATH /usr/local/cuda/bin $PATH
 set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 alias ls="exa --icons --group-directories-first --git"
 alias ncdu="ncdu --color dark -rr"
 alias ..="cd .."
