@@ -21,6 +21,7 @@ dirshome=(
     .config
 )
 fileshome=(
+    .hushlogin
     .bashrc
     .emacs.el
     .profile
