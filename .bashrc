@@ -26,9 +26,9 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[01;36m\]bash)\[\033[00m\] '
+    PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[01;36m\]bash)\[\033[00m\] '
 else
-    PS1='\u@\h:\w\nbash) '
+    PS1='\n\u@\h:\w\nbash) '
 fi
 unset color_prompt
 case "$TERM" in
@@ -44,10 +44,10 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-alias ls='exa --icons --group-directories-first --git --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='exa --icons --group-directories-first --color=auto'
+alias ll='ls --long --header --git'
+alias la='ll --all'
+alias lt='ls --tree'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

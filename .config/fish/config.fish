@@ -18,10 +18,10 @@ set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
-alias ls="exa --icons --group-directories-first --git --color=auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias l="ls -CF"
+alias ls="exa --icons --group-directories-first --color=auto"
+alias ll="ls --long --header --git"
+alias la="ll --all"
+alias lt="ls --tree"
 
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
