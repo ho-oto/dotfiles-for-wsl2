@@ -26,7 +26,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\nbash) '
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[01;36m\]bash)\[\033[00m\] '
 else
     PS1='\u@\h:\w\nbash) '
 fi
