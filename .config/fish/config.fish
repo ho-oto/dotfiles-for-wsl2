@@ -1,10 +1,8 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-if test -f "$HOME/.envdotfiles"
-    set -x DOTFILES_HOME (cat "$HOME/.envdotfiles")
-    set -x PATH "$DOTFILES_HOME/bin" $PATH
-end
+set -x DOTFILES_HOME "$HOME/.dotfiles"
+set -x PATH "$DOTFILES_HOME/bin" $PATH
 
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
