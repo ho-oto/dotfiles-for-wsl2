@@ -1,9 +1,13 @@
 #!/bin/bash
 set -euxo pipefail
 
-export DOTFILES_HOME="$HOME/.dotfiles"
+if [ -f "$HOME/.envdotfiles" ]; then
+    export DOTFILES_HOME=$(cat "$HOME/.envdotfiles")
+else
+    export DOTFILES_HOME="$HOME/.dotfiles"
+    echo "$DOTFILES_HOME" >"$HOME/.envdotfiles"
+fi
 
-echo "$DOTFILES_HOME" >"$HOME/.envdotfiles"
 git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_HOME"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -31,10 +35,9 @@ git checkout .
 
 cat <<EOF
 You have to do the following:
-1. run tmux and press ^q + I to fetch plugins
-2. edit /etc/ssh/sshd_config to disable password
-3. copy files in DOTFILES_HOME/windows to /mnt/c/Users/{windows user name}
-4. set start_wsl_sshd.bat to Task Scheduler of windows
+1. run tmux and press prefix + I to fetch plugins
+2. copy files in DOTFILES_HOME/windows to /mnt/c/Users/{windows user name}
+3. set start_wsl_sshd.bat to Task Scheduler of windows
     
-TODO: write bash/PowerShell script to do 2-4
+TODO: write bash/PowerShell script to do 2-3
 EOF

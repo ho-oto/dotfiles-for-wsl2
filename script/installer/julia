@@ -26,4 +26,4 @@ sudo mkdir -p /opt/julias
 sudo mv julia "/opt/julias/julia-$JULIA_VERSION"
 sudo ln -s "/opt/julias/julia-$JULIA_VERSION/bin/julia" /usr/local/bin/julia
 
-rm -f julia.tar.gz
+rm julia.tar.gz
