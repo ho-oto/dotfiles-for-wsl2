@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euxo pipefail
 
-sed -e 's/#.*//' -e 's/ *//' -e '/^$/d' "$DOTFILES_HOME/list/repository" | while IFS= read -r REPOSITORY
+sed -e 's/#.*//' -e 's/ *//' -e '/^$/d' "$DOTFILES_ROOT/list/repository" | while IFS= read -r REPOSITORY
 do
     sudo add-apt-repository -y "$REPOSITORY"
 done
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sed 's/#.*//' "$DOTFILES_HOME/list/apt" | xargs sudo apt-get -y install
+sed 's/#.*//' "$DOTFILES_ROOT/list/apt" | xargs sudo apt-get -y install

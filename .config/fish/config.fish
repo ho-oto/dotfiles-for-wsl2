@@ -1,8 +1,8 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-set -x DOTFILES_HOME "$HOME/.dotfiles"
-set -x PATH "$DOTFILES_HOME/bin" $PATH
+set -x DOTFILES_ROOT "$HOME/.dotfiles"
+set -x PATH "$DOTFILES_ROOT/bin" $PATH
 
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH

@@ -4,8 +4,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export DOTFILES_HOME="$HOME/.dotfiles"
-export PATH="$DOTFILES_HOME/bin:$PATH"
+export DOTFILES_ROOT="$HOME/.dotfiles"
+export PATH="$DOTFILES_ROOT/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

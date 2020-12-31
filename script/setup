@@ -1,15 +1,15 @@
 #!/bin/bash
 set -euxo pipefail
 
-export DOTFILES_HOME="$HOME/.dotfiles"
+export DOTFILES_ROOT="$HOME/.dotfiles"
 
-git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_HOME"
+git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.share"
 
-cd "$DOTFILES_HOME/script"
+cd "$DOTFILES_ROOT/script"
 
 installer/apt
 installer/cuda
@@ -25,13 +25,13 @@ installer/fisher
 installer/tmux
 installer/misc
 
-cd "$DOTFILES_HOME"
+cd "$DOTFILES_ROOT"
 git checkout .
 
 cat <<EOF
 You have to do the following:
 1. run tmux and press prefix + I to fetch plugins
-2. copy files in DOTFILES_HOME/windows to /mnt/c/Users/{windows user name}
+2. copy files in DOTFILES_ROOT/windows to /mnt/c/Users/{windows user name}
 3. set start_wsl_sshd.bat to Task Scheduler of windows
     
 TODO: write bash/PowerShell script to do 2-3
