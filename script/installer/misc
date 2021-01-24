@@ -2,3 +2,4 @@
 set -euxo pipefail
 
 "$HOME/.cargo/bin"/broot --install fish
+"$HOME/.cargo/bin"/evcxr_jupyter --install

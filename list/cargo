@@ -3,6 +3,8 @@ bottom
 broot
 cargo-update
 du-dust
+evcxr_jupyter
+evcxr_repl
 exa
 fd-find
 git-delta
