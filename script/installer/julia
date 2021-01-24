@@ -5,16 +5,12 @@ cd "$(mktemp -d)" || { echo "Failed to move to tempdir"; exit 1; }
 
 curl -L https://julialang-s3.julialang.org/bin/versions.json -o versions.json
 JULIA_VERSION=$(
-    cat versions.json |
-    jq -r 'keys | .[]' |
+    jq -r 'keys | .[]' versions.json |
     grep -v - |
     sort --version-sort |
     tail -n 1
 )
-JULIA_URL=$(
-    cat versions.json |
-    jq -r --arg jv "$JULIA_VERSION" '.[$jv].files[] | select(.triplet == "x86_64-linux-gnu") | .url'
-)
+JULIA_URL=$(jq -r --arg jv "$JULIA_VERSION" '.[$jv].files[] | select(.triplet == "x86_64-linux-gnu") | .url' versions.json)
 rm versions.json
 
 curl -L "$JULIA_URL" -o julia.tar.gz
