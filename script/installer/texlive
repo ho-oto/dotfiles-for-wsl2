@@ -41,4 +41,5 @@ EOF
 sudo install-tl/install-tl -profile profile.texlive
 
 rm install-tl-unx.tar.gz
+rm profile.texlive
 rm -rf install-tl
