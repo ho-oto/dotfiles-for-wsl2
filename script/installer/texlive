@@ -8,7 +8,7 @@ curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -o in
 mkdir -p install-tl
 tar zxf install-tl-unx.tar.gz -C install-tl --strip-components 1
 
-sudo install-tl/install-tl -profile <(cat <<EOF
+cat <<EOF > profile.texlive
 selected_scheme scheme-full
 TEXDIR /usr/local/texlive/2020
 TEXMFCONFIG ~/.texlive2020/texmf-config
@@ -37,7 +37,8 @@ tlpdbopt_sys_info /usr/local/share/info
 tlpdbopt_sys_man /usr/local/share/man
 tlpdbopt_w32_multi_user 1
 EOF
-)
+
+sudo install-tl/install-tl -profile profile.texlive
 
 rm install-tl-unx.tar.gz
 rm -rf install-tl
