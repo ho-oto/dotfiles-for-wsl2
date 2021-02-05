@@ -14,6 +14,7 @@ cd "$DOTFILES_ROOT/script"
 installer/apt
 installer/cuda
 installer/julia
+installer/texlive
 
 installer/cargo
 installer/pyenv
