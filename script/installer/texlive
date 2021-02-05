@@ -3,7 +3,7 @@ set -euxo pipefail
 
 cd "$(mktemp -d)" || { echo "Failed to move to tmpdir"; exit 1; }
 
-curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -o install-tl-unx.tar.gz
 
 mkdir -p install-tl
 tar zxf install-tl-unx.tar.gz -C install-tl --strip-components 1
