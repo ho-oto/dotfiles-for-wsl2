@@ -9,7 +9,7 @@ mkdir -p install-tl
 tar zxf install-tl-unx.tar.gz -C install-tl --strip-components 1
 
 cat <<EOF > profile.texlive
-selected_scheme scheme-full
+selected_scheme scheme-small
 TEXDIR /usr/local/texlive/2020
 TEXMFCONFIG ~/.texlive2020/texmf-config
 TEXMFHOME ~/texmf
@@ -43,3 +43,6 @@ sudo install-tl/install-tl -profile profile.texlive
 rm install-tl-unx.tar.gz
 rm profile.texlive
 rm -rf install-tl
+
+sudo /usr/local/texlive/2020/bin/x86_64-linux/tlmgr update --self --all
+sudo /usr/local/texlive/2020/bin/x86_64-linux/tlmgr install collection-langjapanese collection-pictures collection-mathscience collection-fontsextra collection-bibtexextra collection-binextra
