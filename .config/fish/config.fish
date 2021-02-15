@@ -50,3 +50,4 @@ abbr --add gp git push
 
 starship init fish | source
 pyenv init - | source
+zoxide init fish | source
