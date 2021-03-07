@@ -1,6 +1,26 @@
 #!/bin/bash
 set -euxo pipefail
 
+PACKAGES=(
+    bat
+    bottom
+    broot
+    cargo-update
+    du-dust
+    evcxr_jupyter
+    evcxr_repl
+    exa
+    fd-find
+    git-delta
+    hyperfine
+    procs
+    ripgrep
+    starship
+    tealdeer
+    tokei
+    zoxide
+)
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 "$HOME/.cargo/bin"/rustup component add rust-src
-sed 's/#.*//' "$DOTFILES_ROOT/list/cargo" | xargs "$HOME/.cargo/bin"/cargo install
+echo "${PACKAGES[@]}" | xargs "$HOME/.cargo/bin"/cargo install

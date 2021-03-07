@@ -1,11 +1,40 @@
 #!/bin/bash
 set -euxo pipefail
 
-sed -e 's/#.*//' -e 's/ *//' -e '/^$/d' "$DOTFILES_ROOT/list/repository" | while IFS= read -r REPOSITORY
-do
-    sudo add-apt-repository -y "$REPOSITORY"
-done
+REPOSITORIES=(
+    ppa:lazygit-team/release
+    ppa:fish-shell/release-3
+)
 
+PACKAGES=(
+    # ssh
+    openssh-server
+    net-tools
+    # build tools
+    build-essential
+    pkg-config
+    m4
+    cmake
+    gfortran
+    # tools
+    fish
+    ncdu
+    htop
+    lazygit
+    emacs-nox
+    unzip
+    shellcheck
+    jq
+    # libs
+    libssl-dev
+    zlib1g-dev
+    libffi-dev
+    libreadline-dev
+    libsqlite3-dev
+    libbz2-dev
+)
+
+echo "${REPOSITORIES[@]}" | xargs -L 1 sudo add-apt-repository -y
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sed 's/#.*//' "$DOTFILES_ROOT/list/apt" | xargs sudo apt-get -y install
+echo "${PACKAGES[@]}" | xargs sudo apt-get -y install
