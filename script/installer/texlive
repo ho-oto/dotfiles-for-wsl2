@@ -44,5 +44,14 @@ rm install-tl-unx.tar.gz
 rm profile.texlive
 rm -rf install-tl
 
+PACKAGES=(
+    collection-langjapanese
+    collection-pictures
+    collection-mathscience
+    collection-fontsextra
+    collection-bibtexextra
+    collection-binextra
+)
+
 sudo /usr/local/texlive/2020/bin/x86_64-linux/tlmgr update --self --all
-sudo /usr/local/texlive/2020/bin/x86_64-linux/tlmgr install collection-langjapanese collection-pictures collection-mathscience collection-fontsextra collection-bibtexextra collection-binextra
+echo "${PACKAGES[@]}" | xargs sudo /usr/local/texlive/2020/bin/x86_64-linux/tlmgr install 

@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-
-cargo install --list >$DOTFILES_ROOT/list/cargo_autogen
