@@ -12,7 +12,6 @@ if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
   else
     tmux new -s xps && exit
   fi
-  tmux $option && exit
 fi
 
 # history
