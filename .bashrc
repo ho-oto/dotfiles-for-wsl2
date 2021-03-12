@@ -7,10 +7,10 @@ esac
 # tmux
 shopt -s checkwinsize
 if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
-  if tmux has-session -t xps; then
-    tmux attach -t xps && exit
+  if tmux has-session -t wsl; then
+    tmux attach -t wsl && exit
   else
-    tmux new -s xps && exit
+    tmux new -s wsl && exit
   fi
 fi
 
