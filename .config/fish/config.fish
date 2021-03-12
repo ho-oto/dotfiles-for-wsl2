@@ -1,6 +1,10 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
+set -x XDG_CONFIG_HOME "$HOME/.config"
+set -x XDG_CACHE_HOME "$HOME/.cache"
+set -x XDG_DATA_HOME "$HOME/.local/share"
+
 set -x DOTFILES_ROOT "$HOME/.dotfiles"
 set -x PATH "$DOTFILES_ROOT/bin" $PATH
 
