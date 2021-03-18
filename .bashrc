@@ -60,6 +60,8 @@ alias ....='cd ../../..'
 alias em='emacs'
 alias lg='lazygit'
 
+alias pbcopy='socat - UNIX-CLIENT:$HOME/.clipper.sock'
+
 # completion
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then

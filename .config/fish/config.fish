@@ -38,6 +38,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias pbcopy='socat - UNIX-CLIENT:$HOME/.clipper.sock'
+
 abbr --add em emacs
 abbr --add lg lazygit
 
