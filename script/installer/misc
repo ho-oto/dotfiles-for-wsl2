@@ -1,5 +1,8 @@
 #!/bin/bash
 set -euxo pipefail
 
+sudo mkdir -p /etc/ssh/sshd_config.d
+sudo echo "StreamLoaclBindUnlink yes" >> /etc/ssh/sshd_config.d/clipper.conf
+
 "$HOME/.cargo/bin"/broot --install fish
 "$HOME/.cargo/bin"/evcxr_jupyter --install

@@ -25,6 +25,7 @@ PACKAGES=(
     unzip
     shellcheck
     jq
+    socat
     # libs
     libssl-dev
     zlib1g-dev
