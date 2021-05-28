@@ -11,6 +11,8 @@ set -x PATH "$DOTFILES_ROOT/bin" $PATH
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH "$PYENV_ROOT/bin" $PATH
 
+set -x PATH "$HOME/.poetry/bin" $PATH
+
 set -x PATH "$HOME/.cargo/bin" $PATH
 
 set -x PATH "$HOME/.fzf/bin" $PATH
@@ -55,5 +57,6 @@ abbr --add gd git diff
 abbr --add gp git push
 
 starship init fish | source
-pyenv init - | source
 zoxide init fish | source
+status is-login; and pyenv init --path | source
+pyenv init - | source
