@@ -72,4 +72,5 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init bash)"
