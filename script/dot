@@ -28,6 +28,7 @@ dirsxdgc=(
     git
     broot
     nano
+    pypoetry
 )
 filesxdgc=(
     fish/config.fish
@@ -36,6 +37,7 @@ filesxdgc=(
     git/ignore
     broot/conf.toml
     nano/nanorc
+    pypoetry/config.toml
 )
 
 mkdir -p "$XDG_CONFIG_HOME"
