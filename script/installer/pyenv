@@ -11,10 +11,6 @@ eval "$(pyenv init -)"
 PYTHON_VERSION=$(pyenv install -l | grep '^ *3.[0-9].[0-9]' | sort --version-sort | tail -n 1 | sed 's/ *//')
 pyenv install "$PYTHON_VERSION"
 
-cd "$(mktemp -d)" || { echo "Failed to move to tempdir"; exit 1; }
-pyenv local "$PYTHON_VERSION"
-pip install --upgrade pip
-pip install numpy scipy ipython jupyter jupyterlab
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --no-modify-path
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | "$PYENV_ROOT/versions/$PYTHON_VERSION/bin"/python - --no-modify-path
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
 "$HOME/.poetry/bin"/poetry completions fish > "$XDG_CONFIG_HOME/fish/completions"/poetry.fish
