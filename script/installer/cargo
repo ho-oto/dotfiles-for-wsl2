@@ -7,8 +7,8 @@ PACKAGES=(
     broot
     cargo-update
     du-dust
-    evcxr_jupyter
-    evcxr_repl
+    # evcxr_jupyter
+    # evcxr_repl
     exa
     fd-find
     git-delta
@@ -22,5 +22,5 @@ PACKAGES=(
 )
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-"$HOME/.cargo/bin"/rustup component add rust-src
+# "$HOME/.cargo/bin"/rustup component add rust-src
 echo "${PACKAGES[@]}" | xargs "$HOME/.cargo/bin"/cargo install
