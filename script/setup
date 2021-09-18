@@ -13,7 +13,7 @@ cd "$DOTFILES_ROOT/script"
 
 installer/apt
 installer/brew
-installer/cuda
+# installer/cuda  disable until Windows 11
 installer/julia
 installer/texlive
 
