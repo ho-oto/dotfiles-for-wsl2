@@ -4,6 +4,8 @@ case $- in
       *) return;;
 esac
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # tmux
 shopt -s checkwinsize
 if [[ -z "$TMUX" && -z "$STY" && -z "$VSCODE_IPC_HOOK_CLI" ]] && type tmux >/dev/null 2>&1; then
@@ -74,4 +76,3 @@ fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init bash)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
