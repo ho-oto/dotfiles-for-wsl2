@@ -61,3 +61,20 @@ zoxide init fish | source
 status is-login; and pyenv init --path | source
 pyenv init - | source
 status is-interactive; and pyenv virtualenv-init - | source
+status is-interactive; and /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+
+function brew
+    set --export --local PATH $PATH
+    if type -q pyenv
+        while contains (pyenv root)/shims $PATH
+            set --erase PATH[(contains --index (pyenv root)/shims $PATH)]
+        end
+    end
+    if type -q cargo-install-update-config
+        set CARGO_PATH (dirname (which cargo-install-update-config))
+        while contains $CARGO_PATH $PATH
+            set --erase PATH[(contains --index $CARGO_PATH $PATH)]
+        end
+    end
+    command brew $argv
+end

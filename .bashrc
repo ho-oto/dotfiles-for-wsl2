@@ -74,3 +74,4 @@ fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init bash)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

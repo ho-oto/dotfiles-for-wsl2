@@ -12,6 +12,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 cd "$DOTFILES_ROOT/script"
 
 installer/apt
+installer/brew
 installer/cuda
 installer/julia
 installer/texlive

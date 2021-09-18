@@ -16,6 +16,8 @@ PACKAGES=(
     m4
     cmake
     gfortran
+    procps
+    file
     # tools
     fish
     ncdu
