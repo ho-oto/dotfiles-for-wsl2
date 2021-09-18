@@ -34,6 +34,7 @@ You have to do the following:
 1. run tmux and press prefix + I to fetch plugins
 2. copy files in DOTFILES_ROOT/windows to /mnt/c/Users/{windows user name}
 3. set start_wsl_sshd.bat to Task Scheduler of windows
+4. (if you forget,) update WSL1 to WSL2 (start_wsl_sshd.bat works only for WSL2)
     
 TODO: write bash/PowerShell script to do 2-3
 EOF
