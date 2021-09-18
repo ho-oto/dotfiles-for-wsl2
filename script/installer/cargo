@@ -2,23 +2,11 @@
 set -euxo pipefail
 
 PACKAGES=(
-    bat
     bottom
     broot
     cargo-update
-    du-dust
     # evcxr_jupyter
     # evcxr_repl
-    exa
-    fd-find
-    git-delta
-    hyperfine
-    procs
-    ripgrep
-    starship
-    tealdeer
-    tokei
-    zoxide
 )
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path

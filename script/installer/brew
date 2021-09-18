@@ -5,7 +5,19 @@ set -euxo
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 formulas=(
+    bat
+    dust
+    exa
+    fd
+    git-delta
+    hyperfine
+    procs
+    ripgrep
+    starship
+    tealdeer
     tmux
+    tokei
+    zoxide
 )
 
 brew update
