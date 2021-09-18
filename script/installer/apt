@@ -2,7 +2,6 @@
 set -euxo pipefail
 
 REPOSITORIES=(
-    ppa:lazygit-team/release
     ppa:fish-shell/release-3
 )
 
@@ -22,7 +21,6 @@ PACKAGES=(
     fish
     ncdu
     htop
-    lazygit
     emacs-nox
     unzip
     shellcheck
