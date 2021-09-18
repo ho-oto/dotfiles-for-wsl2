@@ -3,7 +3,7 @@ set -euxo pipefail
 
 command -v wslsys && {
     wslsys | grep WSL2 || {
-        echo "Are you using WSL1? This script is made for WSL2. Prease enter to continue";
+        echo "Are you using WSL1? This script is made for WSL2. Press enter to continue";
         read -r;
     };
 }
