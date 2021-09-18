@@ -18,8 +18,6 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH="$HOME/.fzf/bin:$PATH"
-
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LOAD_PATH="/usr/local/cuda/lib64:$LD_LOAD_PATH"
 

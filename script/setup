@@ -19,7 +19,6 @@ installer/texlive
 
 installer/cargo
 installer/pyenv
-installer/fzf
 
 ./dot
 

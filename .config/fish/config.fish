@@ -15,8 +15,6 @@ set -x PATH "$HOME/.poetry/bin" $PATH
 
 set -x PATH "$HOME/.cargo/bin" $PATH
 
-set -x PATH "$HOME/.fzf/bin" $PATH
-
 set -x PATH /usr/local/cuda/bin $PATH
 set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
 
