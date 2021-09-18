@@ -18,8 +18,10 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LOAD_PATH="/usr/local/cuda/lib64:$LD_LOAD_PATH"
+if [ -d /usr/local/cuda ]; then
+    export PATH="/usr/local/cuda/bin:$PATH"
+    export LD_LOAD_PATH="/usr/local/cuda/lib64:$LD_LOAD_PATH"
+fi
 
 export PATH="/usr/local/texlive/2020/bin/x86_64-linux:$PATH"
 export MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH"

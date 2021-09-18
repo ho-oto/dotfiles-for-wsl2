@@ -15,8 +15,10 @@ set -x PATH "$HOME/.poetry/bin" $PATH
 
 set -x PATH "$HOME/.cargo/bin" $PATH
 
-set -x PATH /usr/local/cuda/bin $PATH
-set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
+if test -d /usr/local/cuda
+    set -x PATH /usr/local/cuda/bin $PATH
+    set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
+end
 
 set -x PATH /usr/local/texlive/2020/bin/x86_64-linux $PATH
 set -x MANPATH /usr/local/texlive/2020/texmf-dist/doc/man $MANPATH
