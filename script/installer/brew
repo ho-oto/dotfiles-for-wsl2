@@ -15,6 +15,7 @@ formulas=(
     lazygit
     procs
     pueue
+    rclone
     ripgrep
     starship
     tealdeer
