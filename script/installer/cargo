@@ -2,8 +2,6 @@
 set -euxo pipefail
 
 PACKAGES=(
-    bottom
-    broot
     cargo-update
     # evcxr_jupyter
     # evcxr_repl
