@@ -4,6 +4,10 @@ set -euxo
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+taps=(
+    wez/wezterm-linuxbrew
+)
+
 formulas=(
     bat
     bottom
@@ -23,8 +27,13 @@ formulas=(
     tealdeer
     tmux
     tokei
+    wezterm
     zoxide
 )
+
+for tap in "${taps[@]}"; do
+    brew tap "$tap"
+done
 
 brew update
 
