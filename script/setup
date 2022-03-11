@@ -37,6 +37,7 @@ cd "$DOTFILES_ROOT"
 git checkout .
 
 sudo ssh-keygen -A
+echo "AcceptEnv WEZTERM_*" | sudo tee -a /etc/ssh/sshd_config
 
 cat <<EOF
 You have to do the following:
