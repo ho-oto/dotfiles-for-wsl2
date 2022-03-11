@@ -27,7 +27,7 @@ formulas=(
     tealdeer
     tmux
     tokei
-#    wezterm
+    wezterm
     zoxide
 )
 
