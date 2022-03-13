@@ -15,6 +15,9 @@ if [[ -z "$TMUX" && -z "$STY" && -z "$VSCODE_IPC_HOOK_CLI" && -z "$WEZTERM_PANE"
     tmux new -s wsl && exit
   fi
 fi
+if [[ -n "$WEZTERM_PANE" ]]; then
+  exec fish
+fi
 
 # history
 HISTSIZE=1000
