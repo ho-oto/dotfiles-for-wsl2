@@ -30,7 +30,7 @@ formulas=(
     pueue
     rclone
     ripgrep
-    shellckeck
+    shellcheck
     socat
     starship
     tealdeer
