@@ -17,18 +17,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-installer/apt
-installer/brew
-installer/cuda
-installer/texlive
-
-installer/cargo
-installer/pyenv
-
+./apt
+./brew
+[ -z "${CI:-}" ] && ./cuda
+./cargo
+./pyenv
 ./dot
-
-installer/fisher
-installer/misc
+./fisher
+./misc
 
 cat <<EOF
 You have to do the following:
