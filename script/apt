@@ -26,12 +26,6 @@ PACKAGES=(
 )
 
 sudo apt-get -y update
-
-if [ -z "${CI:-}" ]; then
-    sudo apt-get -y upgrade
-else
-    # workaround to pass CI on GitHub Actions
-    sudo env ACCEPT_EULA=Y apt-get -y upgrade
-fi
+sudo apt-get -y upgrade
 
 echo "${PACKAGES[@]}" | xargs sudo apt-get -y install
