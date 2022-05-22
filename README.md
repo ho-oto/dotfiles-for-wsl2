@@ -1,3 +1,5 @@
+# Setup script for Ubuntu on WSL2
+
 ![CI](https://github.com/ho-oto/dotfiles-for-wsl2/workflows/CI/badge.svg)
 
 how to use:
