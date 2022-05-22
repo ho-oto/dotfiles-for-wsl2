@@ -1,22 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo pipefail
 
 command -v wslsys && {
     wslsys | grep WSL2 || {
-        echo "Are you using WSL1? This script is made for WSL2. Press enter to continue";
+        echo "This script is made for Ubuntu on WSL2. However, you seem to be using WSL1.";
+        echo "Press enter to continue anyway.";
         read -r;
     };
 }
 
 export DOTFILES_ROOT="$HOME/.dotfiles"
-
 git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
+cd "$DOTFILES_ROOT/script"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-
-cd "$DOTFILES_ROOT/script"
 
 installer/apt
 installer/brew

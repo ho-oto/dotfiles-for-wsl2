@@ -15,14 +15,18 @@ formulas=(
     dust
     exa
     fd
+    fish
     fzf
     git-delta
+    htop
     hyperfine
+    jq
     lazygit
     procs
     pueue
     rclone
     ripgrep
+    shellckeck
     starship
     tealdeer
     tmux
