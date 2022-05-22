@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo pipefail
+
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 sudo mkdir -p /etc/ssh/sshd_config.d
 sudo sh -c "echo 'StreamLocalBindUnlink yes' >> /etc/ssh/sshd_config.d/clipper.conf"

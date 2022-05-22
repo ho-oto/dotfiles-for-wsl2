@@ -20,7 +20,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 installer/apt
 installer/brew
 installer/cuda
-installer/julia
 installer/texlive
 
 installer/cargo
@@ -29,17 +28,13 @@ installer/pyenv
 ./dot
 
 installer/fisher
-installer/tmux
 installer/misc
-
-cd "$DOTFILES_ROOT"
-git checkout .
 
 cat <<EOF
 You have to do the following:
 1. run tmux and press prefix + I to fetch plugins
 2. copy files in DOTFILES_ROOT/windows to /mnt/c/Users/{windows user name}
 3. set start_wsl_sshd.bat to Task Scheduler of windows
-    
+
 TODO: write bash/PowerShell script to do 2-3
 EOF

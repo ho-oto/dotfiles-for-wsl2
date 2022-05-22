@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -13,24 +13,30 @@ formulas=(
     bottom
     broot
     dust
+    emacs
     exa
     fd
     fish
+    fisher
     fzf
     git-delta
     htop
     hyperfine
     jq
+    juliaup
     lazygit
+    ncdu
     procs
     pueue
     rclone
     ripgrep
     shellckeck
+    socat
     starship
     tealdeer
     tmux
     tokei
+    unzip
     wezterm
     zoxide
 )

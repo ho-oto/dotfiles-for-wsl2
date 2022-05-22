@@ -1,15 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo pipefail
 
 # REPOSITORIES=(
 #     ppa:fish-shell/release-3
 # )
+# echo "${REPOSITORIES[@]}" | xargs -n 1 sudo add-apt-repository -y
 
 PACKAGES=(
-    # ssh
     openssh-server
     net-tools
-    # build tools
     build-essential
     pkg-config
     m4
@@ -17,16 +16,7 @@ PACKAGES=(
     gfortran
     procps
     file
-    # tools
-    # fish
-    ncdu
-    # htop
-    emacs-nox
-    unzip
-    # shellcheck
-    # jq
-    socat
-    # libs
+    unar
     libssl-dev
     zlib1g-dev
     libffi-dev
@@ -35,12 +25,13 @@ PACKAGES=(
     libbz2-dev
 )
 
-# echo "${REPOSITORIES[@]}" | xargs -n 1 sudo add-apt-repository -y
 sudo apt-get -y update
+
 if [ -z "${CI:-}" ]; then
     sudo apt-get -y upgrade
 else
     # workaround to pass CI on GitHub Actions
     sudo env ACCEPT_EULA=Y apt-get -y upgrade
 fi
+
 echo "${PACKAGES[@]}" | xargs sudo apt-get -y install

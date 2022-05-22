@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo pipefail
 
 cd "$(mktemp -d)" || { echo "Failed to move to tmpdir"; exit 1; }
