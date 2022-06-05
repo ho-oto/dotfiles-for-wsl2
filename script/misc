@@ -6,7 +6,11 @@ git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 sudo mkdir -p /etc/ssh/sshd_config.d
 sudo sh -c "echo 'StreamLocalBindUnlink yes' >> /etc/ssh/sshd_config.d/clipper.conf"
 sudo sh -c "echo 'AcceptEnv WEZTERM_*' >> /etc/ssh/sshd_config.d/wezterm.conf"
+sudo sh -c "echo 'AcceptEnv TERM*' >> /etc/ssh/sshd_config.d/wezterm.conf"
+sudo sh -c "echo 'AcceptEnv COLORTERM' >> /etc/ssh/sshd_config.d/wezterm.conf"
 sudo ssh-keygen -A
 
 /home/linuxbrew/.linuxbrew/bin/broot --install fish
 # "$HOME/.cargo/bin"/evcxr_jupyter --install
+
+sudo ln -s /home/linuxbrew/.linuxbrew/bin/wezterm /usr/local/bin/wezterm
