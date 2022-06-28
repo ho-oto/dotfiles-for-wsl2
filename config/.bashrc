@@ -58,8 +58,8 @@ alias la='ll --all'
 alias lt='ls --tree'
 
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias fgrep='grep -f --color=auto'
+alias egrep='grep -e --color=auto'
 alias ncdu='ncdu --color dark -rr'
 
 alias ..='cd ..'
