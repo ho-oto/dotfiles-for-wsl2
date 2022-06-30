@@ -25,6 +25,7 @@ dirsxdgc=(
     broot
     nano
     pypoetry
+    wezterm
 )
 filesxdgc=(
     fish/config.fish
@@ -33,6 +34,7 @@ filesxdgc=(
     broot/conf.toml
     nano/nanorc
     pypoetry/config.toml
+    wezterm/wezterm.lua
 )
 
 mkdir -p "$XDG_CONFIG_HOME"

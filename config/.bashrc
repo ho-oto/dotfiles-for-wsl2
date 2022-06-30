@@ -4,22 +4,7 @@ case $- in
       *) return;;
 esac
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# tmux
-#shopt -s checkwinsize
-#if [[ -z "$TMUX" && -z "$STY" && -z "$VSCODE_IPC_HOOK_CLI" && -z "$WEZTERM_PANE" ]] && type tmux >/dev/null 2>&1; then
-#  if tmux has-session -t wsl; then
-#    tmux attach -t wsl && exit
-#  else
-#    tmux new -s wsl && exit
-#  fi
-#fi
-if [[ -n "$WEZTERM_PANE" ]]; then
-  exec fish
-fi
-
-if [[ "$TERM_PROGRAM" = "WezTerm" ]]; then
+if [[ "$TERM_PROGRAM" = "WezTerm" && "$(basename $SHELL)" -ne "fish" ]]; then
   exec fish
 fi
 
@@ -28,24 +13,6 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=ignoreboth
 shopt -s histappend
-
-# prompt
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-if [ "$color_prompt" = yes ]; then
-    PS1='\n\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[01;36m\]bash)\[\033[00m\] '
-else
-    PS1='\n\u@\h:\w\nbash) '
-fi
-unset color_prompt
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # alias
 if [ -x /usr/bin/dircolors ]; then
@@ -58,8 +25,6 @@ alias la='ll --all'
 alias lt='ls --tree'
 
 alias grep='grep --color=auto'
-alias fgrep='grep -f --color=auto'
-alias egrep='grep -e --color=auto'
 alias ncdu='ncdu --color dark -rr'
 
 alias ..='cd ..'
@@ -80,6 +45,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(starship init bash)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init bash)"

@@ -1,46 +1,19 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-set -x XDG_CONFIG_HOME "$HOME/.config"
-set -x XDG_CACHE_HOME "$HOME/.cache"
-set -x XDG_DATA_HOME "$HOME/.local/share"
+alias ls "exa --icons --group-directories-first --color=auto"
+alias ll "ls --long --header --git"
+alias la "ll --all"
+alias lt "ls --tree"
 
-set -x DOTFILES_ROOT "$HOME/.dotfiles"
-set -x PATH "$DOTFILES_ROOT/bin" $PATH
+alias grep "grep --color=auto"
+alias ncdu "ncdu --color dark -rr"
 
-set -x PYENV_ROOT "$HOME/.pyenv"
-set -x PATH "$PYENV_ROOT/bin" $PATH
+alias .. "cd .."
+alias ... "cd ../.."
+alias .... "cd ../../.."
 
-set -x PATH "$HOME/.poetry/bin" $PATH
-
-set -x PATH "$HOME/.cargo/bin" $PATH
-
-if test -d /usr/local/cuda
-    set -x PATH /usr/local/cuda/bin $PATH
-    set -x LD_LOAD_PATH /usr/local/cuda/lib64 $LD_LOAD_PATH
-end
-
-set -x PATH /usr/local/texlive/2020/bin/x86_64-linux $PATH
-set -x MANPATH /usr/local/texlive/2020/texmf-dist/doc/man $MANPATH
-set -x INFOPATH /usr/local/texlive/2020/texmf-dist/doc/info $INFOPATH
-
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-alias ls="exa --icons --group-directories-first --color=auto"
-alias ll="ls --long --header --git"
-alias la="ll --all"
-alias lt="ls --tree"
-
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
-alias ncdu="ncdu --color dark -rr"
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
-alias pbcopy='socat - UNIX-CLIENT:$HOME/.clipper.sock'
+alias pbcopy 'socat - UNIX-CLIENT:$HOME/.clipper.sock'
 
 abbr --add em emacs
 abbr --add lg lazygit
@@ -56,12 +29,12 @@ abbr --add gs git status
 abbr --add gd git diff
 abbr --add gp git push
 
-starship init fish | source
-zoxide init fish | source
-status is-login; and pyenv init --path | source
-pyenv init - | source
-status is-interactive; and pyenv virtualenv-init - | source
-status is-interactive; and /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+if status is-interactive
+    starship init fish | source
+    pyenv init - | source
+    pyenv virtualenv-init - | source
+    zoxide init fish | source
+end
 
 function brew
     set --export --local PATH $PATH

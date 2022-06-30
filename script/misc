@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euxo
 
-git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-
 sudo mkdir -p /etc/ssh/sshd_config.d
 sudo sh -c "echo 'StreamLocalBindUnlink yes' >> /etc/ssh/sshd_config.d/clipper.conf"
 sudo sh -c "echo 'AcceptEnv WEZTERM_*' >> /etc/ssh/sshd_config.d/wezterm.conf"
