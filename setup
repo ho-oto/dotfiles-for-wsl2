@@ -9,23 +9,26 @@ command -v wslsys && {
     };
 }
 
-export DOTFILES_ROOT="$HOME/.dotfiles"
-git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
-cd "$DOTFILES_ROOT"
-
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
+export DOTFILES_ROOT="$HOME/.dotfiles"
+
+git clone -b "${GITHUB_REF_NAME:-"master"}" https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
+cd "$DOTFILES_ROOT"
 
 script/apt
 script/brew
-[ -z "${CI:-}" ] && script/cuda
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 script/cargo
 script/pyenv
-script/dot
 script/fisher
 script/misc
 
-[ -z "${CI:-}" ] && cp windows/* $(wslpath $(wslvar USERPROFILE))
+script/dot
+
+if [ -z "${CI:-}" ]; then
+    script/cuda
+    cp windows/* $(wslpath $(wslvar USERPROFILE))
+fi
 
 echo "Set start_wsl_sshd.bat to Task Scheduler of windows"

@@ -26,5 +26,4 @@ jobs:
         os: [ubuntu-20.04]
     steps:
     - name: setup
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/script/setup)"
-    
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/setup)"
