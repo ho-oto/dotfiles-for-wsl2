@@ -11,26 +11,21 @@ command -v wslsys && {
 
 export DOTFILES_ROOT="$HOME/.dotfiles"
 git clone https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
-cd "$DOTFILES_ROOT/script"
+cd "$DOTFILES_ROOT"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-./apt
-./brew
-[ -z "${CI:-}" ] && ./cuda
-./cargo
-./pyenv
-./dot
-./fisher
-./misc
+script/apt
+script/brew
+[ -z "${CI:-}" ] && script/cuda
+script/cargo
+script/pyenv
+script/dot
+script/fisher
+script/misc
 
-cat <<EOF
-You have to do the following:
-1. run tmux and press prefix + I to fetch plugins
-2. copy files in DOTFILES_ROOT/windows to /mnt/c/Users/{windows user name}
-3. set start_wsl_sshd.bat to Task Scheduler of windows
+[ -z "${CI:-}" ] && cp windows/* $(wslpath $(wslvar USERPROFILE))
 
-TODO: write bash/PowerShell script to do 2-3
-EOF
+echo "Set start_wsl_sshd.bat to Task Scheduler of windows"

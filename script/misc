@@ -9,6 +9,5 @@ sudo sh -c "echo 'AcceptEnv COLORTERM' >> /etc/ssh/sshd_config.d/wezterm.conf"
 sudo ssh-keygen -A
 
 /home/linuxbrew/.linuxbrew/bin/broot --install fish
-# "$HOME/.cargo/bin"/evcxr_jupyter --install
 
 sudo ln -s /home/linuxbrew/.linuxbrew/bin/wezterm /usr/local/bin/wezterm

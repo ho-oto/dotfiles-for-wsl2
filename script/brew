@@ -9,37 +9,46 @@ taps=(
 )
 
 formulas=(
-    bat
-    bottom
-    broot
-    dust
-    emacs
-    exa
-    fd
-    fish
-    fisher
-    fzf
-    git-delta
-    gron
-    htop
-    hyperfine
-    jq
-    juliaup
-    lazygit
-    ncdu
-    procs
-    pueue
-    rclone
-    ripgrep
-    shellcheck
-    socat
-    starship
-    tealdeer
-    tmux
-    tokei
-    unzip
-    wezterm
-    zoxide
+    act         # https://github.com/nektos/act               | run GitHub Actions locally
+    bat         # https://github.com/sharkdp/bat              | alternative of cat
+    bottom      # https://github.com/ClementTsang/bottom      | alternative of top
+    broot       # https://github.com/Canop/broot              |
+    difftastic  # https://github.com/Wilfred/difftastic       | structual diff tool
+    direnv      # https://github.com/direnv/direnv            |
+    dust        # https://github.com/bootandy/dust            | alternative of du
+    emacs       # https://www.gnu.org/software/emacs          |
+    exa         # https://github.com/ogham/exa                | alternative of ls
+    fd          # https://github.com/sharkdp/fd               | alternative of find
+    fish        # https://fishshell.com                       | user-friendly shell
+    fisher      # https://github.com/jorgebucaran/fisher      | package manager for fish
+    fzf         # https://github.com/junegunn/fzf             | fuzzy finder
+    gh          # https://github.com/cli/cli                  | GitHub cli
+    ghq         # https://github.com/x-motemen/ghq            | manage remote repository clones
+    git         # https://git-scm.com                         |
+    git-delta   # https://github.com/dandavison/delta         | syntax-highlighting pager
+    git-lfs     # https://git-lfs.github.com                  |
+    gron        # https://github.com/tomnomnom/gron           | make JSON greppable
+    htop        # https://htop.dev                            | alternative of top
+    hyperfine   # https://github.com/sharkdp/hyperfine        | benchmark tool
+    jc          # https://github.com/kellyjonbrazil/jc        | convert outputs of cli to JSON
+    juliaup     # https://github.com/JuliaLang/juliaup        | julia version manager
+    jq          # https://stedolan.github.io/jq               | JSON processor
+    lazygit     # https://github.com/jesseduffield/lazygit    | git TUI
+    ncdu        # https://dev.yorhel.nl/ncdu                  | alternative of du
+    procs       # https://github.com/dalance/procs            | alternative of ps
+    pueue       # https://github.com/Nukesor/pueue            | command line task manager
+    rclone      # https://rclone.org/                         | sync to cloud storage
+    ripgrep     # https://github.com/BurntSushi/ripgrep       | alternative of grep
+    shellcheck  # https://github.com/koalaman/shellcheck      | linter for sh
+    # socat
+    starship    # https://starship.rs                         | prompto
+    tealdeer    # https://github.com/dbrgn/tealdeer           | Rust implements of tldr
+    tmux        # https://github.com/tmux/tmux                |
+    tokei       # https://github.com/XAMPPRocky/tokei         | count source code
+    viu         # https://github.com/atanunq/viu              | terminal image viewer
+    wezterm     # https://github.com/wez/wezterm              | server side client of WezTerm
+    xh          # https://github.com/ducaale/xh               | alternative of curl
+    zoxide      # https://github.com/ajeetdsouza/zoxide       | alternative of cd
 )
 
 for tap in "${taps[@]}"; do

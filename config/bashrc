@@ -34,7 +34,7 @@ alias ....='cd ../../..'
 alias em='emacs'
 alias lg='lazygit'
 
-alias pbcopy='socat - UNIX-CLIENT:$HOME/.clipper.sock'
+# alias pbcopy='socat - UNIX-CLIENT:$HOME/.clipper.sock'
 
 # completion
 if ! shopt -oq posix; then
