@@ -15,12 +15,13 @@ export DOTFILES_ROOT="$HOME/.dotfiles"
 git clone -b "${GITHUB_REF_NAME:-"master"}" https://github.com/ho-oto/dotfiles-for-wsl2 "$DOTFILES_ROOT"
 cd "$DOTFILES_ROOT"
 
-script/apt
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
 script/brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-script/cargo
-script/pyenv
+script/python
 script/fisher
 script/misc
 
