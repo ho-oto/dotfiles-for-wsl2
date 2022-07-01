@@ -22,7 +22,6 @@ cd "$DOTFILES_ROOT"
 script/brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-script/python
 script/fisher
 script/misc
 
