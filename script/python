@@ -13,7 +13,7 @@ PYENV_ROOT="$HOME/.pyenv"
 PATH="$PYENV_ROOT/bin:$PATH"
 PYTHON_VERSION=$(pyenv install -l | grep '^ *3.[0-9]*.[0-9]*$' | sort --version-sort | tail -n 1 | sed 's/ *//')
 
-env CONFIGURE_OPTS="--with-openssl=$(which openssl)" pyenv install "$PYTHON_VERSION"
+env CONFIGURE_OPTS="--with-openssl=/usr/bin/openssl" pyenv install "$PYTHON_VERSION"
 
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | "$PYENV_ROOT/versions/$PYTHON_VERSION/bin"/python - --no-modify-path
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
