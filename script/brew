@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euxo
 
+sudo apt-get -y install build-essential procps curl file git
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -40,7 +41,6 @@ formulas=(
     rclone      # https://rclone.org/                         | sync to cloud storage
     ripgrep     # https://github.com/BurntSushi/ripgrep       | alternative of grep
     shellcheck  # https://github.com/koalaman/shellcheck      | linter for sh
-    # socat
     starship    # https://starship.rs                         | prompto
     tealdeer    # https://github.com/dbrgn/tealdeer           | Rust implements of tldr
     tmux        # https://github.com/tmux/tmux                |
