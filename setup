@@ -30,7 +30,7 @@ script/dot
 
 if [ -z "${CI:-}" ]; then
     script/cuda
-    cp windows/* $(wslpath $(wslvar USERPROFILE))
+    cp windows/* "$(wslpath "$(wslvar USERPROFILE)")"
 fi
 
 echo "Set start_wsl_sshd.bat to Task Scheduler of windows"
