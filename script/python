@@ -10,7 +10,7 @@ eval "$(pyenv init -)"
 
 # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 sudo apt-get -y install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-ev wget curl llvm \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 PYTHON_VERSION=$(pyenv install -l | grep '^ *3.[0-9]*.[0-9]*$' | sort --version-sort | tail -n 1 | sed 's/ *//')
