@@ -10,7 +10,7 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # Poetry
-[ brew list --versions python@3.10 ] || brew install python@3.10
+brew list --versions python@3.10 || brew install python@3.10
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --no-modify-path
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
 "$HOME/.poetry/bin"/poetry completions fish > "$XDG_CONFIG_HOME/fish/completions"/poetry.fish
