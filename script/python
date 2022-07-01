@@ -9,10 +9,11 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
 git clone https://github.com/pyenv/pyenv-virtualenv.git "$HOME/.pyenv/plugins/pyenv-virtualenv"
 
-export PYENV_ROOT="$HOME/.pyenv"
+PYENV_ROOT="$HOME/.pyenv"
+PATH="$PYENV_ROOT/bin:$PATH"
+PYTHON_VERSION=$(pyenv install -l | grep '^ *3.[0-9]*.[0-9]*$' | sort --version-sort | tail -n 1 | sed 's/ *//')
 
-PYTHON_VERSION=$("$PYENV_ROOT/bin"/pyenv install -l | grep '^ *3.[0-9]*.[0-9]*$' | sort --version-sort | tail -n 1 | sed 's/ *//')
-"$PYENV_ROOT/bin"/pyenv install "$PYTHON_VERSION"
+env CONFIGURE_OPTS="--with-openssl=$(which openssl)" pyenv install "$PYTHON_VERSION"
 
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | "$PYENV_ROOT/versions/$PYTHON_VERSION/bin"/python - --no-modify-path
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
