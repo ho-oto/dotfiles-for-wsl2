@@ -10,7 +10,7 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # Poetry
-brew list --versions python@3.10 || brew install python@3.10
+command -v python3 || brew install python@3.10
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --no-modify-path
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
 "$HOME/.poetry/bin"/poetry completions fish > "$XDG_CONFIG_HOME/fish/completions"/poetry.fish
@@ -20,12 +20,14 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-mod
 
 # SSH server
 sudo apt-get -y install openssh-server
-sudo mkdir -p /etc/ssh/sshd_config.d
-sudo sh -c "echo 'StreamLocalBindUnlink yes' >> /etc/ssh/sshd_config.d/clipper.conf"
-sudo sh -c "echo 'AcceptEnv WEZTERM_*' >> /etc/ssh/sshd_config.d/wezterm.conf"
-sudo sh -c "echo 'AcceptEnv TERM*' >> /etc/ssh/sshd_config.d/wezterm.conf"
-sudo sh -c "echo 'AcceptEnv COLORTERM' >> /etc/ssh/sshd_config.d/wezterm.conf"
 sudo ssh-keygen -A
+sudo mkdir -p /etc/ssh/sshd_config.d
+echo 'StreamLocalBindUnlink yes' | sudo tee -a /etc/ssh/sshd_config.d/clipper.conf
+sudo tee -a /etc/ssh/sshd_config.d/wezterm.conf <<EOF
+AcceptEnv WEZTERM*
+AcceptEnv TERM*
+AcceptEnv COLORTERM
+EOF
 
 # broot
 /home/linuxbrew/.linuxbrew/bin/broot --install fish

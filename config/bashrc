@@ -4,9 +4,7 @@ case $- in
       *) return;;
 esac
 
-if [[ "$TERM_PROGRAM" = "WezTerm" && "$(basename $SHELL)" -ne "fish" ]]; then
-  exec fish
-fi
+[[ "$TERM_PROGRAM" = "WezTerm" && "$(basename $SHELL)" != "fish" ]] && exec fish
 
 # history
 HISTSIZE=1000

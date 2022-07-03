@@ -1,6 +1,11 @@
+format = "$username$env_var$hostname$all"
+
 [directory]
 truncation_length = 8
 fish_style_pwd_dir_length = 2
+
+[env_var.WEZTERM_UNIX_SOCKET]
+format = "🪢"
 
 [username]
 show_always = true
