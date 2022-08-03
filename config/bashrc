@@ -4,7 +4,7 @@ case $- in
       *) return;;
 esac
 
-[[ "$TERM_PROGRAM" = "WezTerm" && "$(basename $SHELL)" != "fish" ]] && exec fish
+[[ "$(basename $SHELL)" != "fish" && -z "$VSCODE_IPC_HOOK_CLI" ]] && exec fish
 
 # history
 HISTSIZE=1000
