@@ -11,7 +11,7 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 
 # Poetry
 command -v python3 || brew install python@3.10
-curl -sSL https://install.python-poetry.org | python3 - --no-modify-path
+curl -sSL https://install.python-poetry.org | python3 - --yes
 mkdir -p "$XDG_CONFIG_HOME/fish"/completions
 "$HOME/.poetry/bin"/poetry completions fish > "$XDG_CONFIG_HOME/fish/completions"/poetry.fish
 
