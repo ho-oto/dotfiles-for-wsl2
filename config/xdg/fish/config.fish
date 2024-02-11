@@ -1,7 +1,7 @@
 set fish_greeting
 set -x FZF_LEGACY_KEYBINDINGS 0
 
-alias ls "exa --icons --group-directories-first --color=auto"
+alias ls "eza --icons --group-directories-first --color=auto"
 alias ll "ls --long --header --git"
 alias la "ll --all"
 alias lt "ls --tree"
@@ -29,20 +29,4 @@ abbr --add gp git push
 if status is-interactive
     starship init fish | source
     zoxide init fish | source
-end
-
-function brew
-    set --export --local PATH $PATH
-    if type -q pyenv
-        while contains (pyenv root)/shims $PATH
-            set --erase PATH[(contains --index (pyenv root)/shims $PATH)]
-        end
-    end
-    if type -q cargo-install-update-config
-        set CARGO_PATH (dirname (which cargo-install-update-config))
-        while contains $CARGO_PATH $PATH
-            set --erase PATH[(contains --index $CARGO_PATH $PATH)]
-        end
-    end
-    command brew $argv
 end

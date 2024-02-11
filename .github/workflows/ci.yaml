@@ -3,18 +3,18 @@ name: CI
 on:
   push:
     branches:
-    - master
+      - master
     paths:
-    - 'script/**'
-    - 'list/**'
-    - '.github/**'
+      - "script/**"
+      - "list/**"
+      - ".github/**"
   pull_request:
     paths:
-    - 'script/**'
-    - 'list/**'
-    - '.github/**'
+      - "script/**"
+      - "list/**"
+      - ".github/**"
   schedule:
-  - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
 
 jobs:
   test:
@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-latest]
     steps:
-    - name: setup
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/setup)"
+      - name: setup
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ho-oto/dotfiles-for-wsl2/master/setup)"

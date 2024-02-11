@@ -1,8 +1,8 @@
 format = "$username$env_var$hostname$all"
 
 [directory]
-truncation_length = 8
 fish_style_pwd_dir_length = 2
+truncation_length = 8
 
 [env_var.WEZTERM_UNIX_SOCKET]
 format = "🪢"
@@ -14,8 +14,8 @@ show_always = true
 ssh_only = false
 
 [shell]
-disabled = false
 bash_indicator = "bash "
+disabled = false
 fish_indicator = ""
-zsh_indicator = "zsh "
 format = "[$indicator]($style)"
+zsh_indicator = "zsh "
