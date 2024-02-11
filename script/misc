@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# Python
-git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
-git clone https://github.com/pyenv/pyenv-virtualenv.git "$HOME/.pyenv/plugins/pyenv-virtualenv"
-# https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-sudo apt-get -y install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+# Rye (Python)
+curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
@@ -22,9 +17,6 @@ AcceptEnv WEZTERM*
 AcceptEnv TERM*
 AcceptEnv COLORTERM
 EOF
-
-# broot
-/home/linuxbrew/.linuxbrew/bin/broot --install fish
 
 # wezterm
 sudo ln -s /home/linuxbrew/.linuxbrew/bin/wezterm /usr/local/bin/wezterm

@@ -21,10 +21,8 @@ cd "$DOTFILES_ROOT"
 
 script/brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 script/fisher
 script/misc
-
 script/dot
 
 if [ -z "${CI:-}" ]; then
