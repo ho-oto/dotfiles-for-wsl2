@@ -4,7 +4,9 @@ case $- in
       *) return;;
 esac
 
-[[ "$(basename $SHELL)" == "fish" && -z "$VSCODE_IPC_HOOK_CLI" ]] && exec fish
+if [[ "$(ps -p $PPID -o comm=)" == "sshd" && -z "$VSCODE_IPC_HOOK_CLI" ]]; then
+  exec fish --features qmark-noglob
+fi
 
 # history
 HISTSIZE=1000
@@ -44,6 +46,4 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(starship init bash)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init bash)"

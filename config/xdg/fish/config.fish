@@ -13,11 +13,8 @@ alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
 
-alias pbcopy 'socat - UNIX-CLIENT:$HOME/.clipper.sock'
-
 abbr --add em emacs
 abbr --add lg lazygit
-
 abbr --add ga git add
 abbr --add gau git add --update
 abbr --add gaa git add --all
@@ -31,8 +28,6 @@ abbr --add gp git push
 
 if status is-interactive
     starship init fish | source
-    pyenv init - | source
-    pyenv virtualenv-init - | source
     zoxide init fish | source
 end
 
