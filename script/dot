@@ -4,7 +4,6 @@ set -euxo
 [ -z "${XDG_CONFIG_HOME:-}" ] && XDG_CONFIG_HOME="$HOME/.config"
 
 dirshome=(
-    julia/config
     jupyter
     config
 )
@@ -14,7 +13,6 @@ fileshome=(
     emacs.el
     profile
     tmux.conf
-    julia/config/startup.jl
     jupyter/jupyter_notebook_config.py
     config/starship.toml # location of starship.toml is hard-coded as $HOME/.config, not $XDG_CONFIG_HOME
 )
@@ -22,18 +20,14 @@ fileshome=(
 dirsxdgc=(
     fish
     git
-    broot
     nano
-    pypoetry
     wezterm
 )
 filesxdgc=(
     fish/config.fish
     git/config
     git/ignore
-    broot/conf.toml
     nano/nanorc
-    pypoetry/config.toml
     wezterm/wezterm.lua
 )
 

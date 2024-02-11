@@ -4,7 +4,7 @@ case $- in
       *) return;;
 esac
 
-[[ "$(basename $SHELL)" != "fish" && -z "$VSCODE_IPC_HOOK_CLI" ]] && exec fish
+[[ "$(basename $SHELL)" == "fish" && -z "$VSCODE_IPC_HOOK_CLI" ]] && exec fish
 
 # history
 HISTSIZE=1000
@@ -17,7 +17,7 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-alias ls='exa --icons --group-directories-first --color=auto'
+alias ls='eza --icons --group-directories-first --color=auto'
 alias ll='ls --long --header --git'
 alias la='ll --all'
 alias lt='ls --tree'
