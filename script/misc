@@ -7,6 +7,9 @@ curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 
+# mise
+curl https://mise.run | bash
+
 # SSH server
 sudo apt-get -y install openssh-server
 sudo ssh-keygen -A

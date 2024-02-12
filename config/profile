@@ -1,5 +1,3 @@
-export LANG=ja_JP.UTF-8
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -11,13 +9,12 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.rye/env"
 
 if [ -d /usr/local/cuda ]; then
     export PATH="/usr/local/cuda/bin:$PATH"
     export LD_LOAD_PATH="/usr/local/cuda/lib64:$LD_LOAD_PATH"
 fi
-
-source "$HOME/.rye/env"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
